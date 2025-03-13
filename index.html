@@ -197,27 +197,25 @@
         </div>
     </div>
 
-    <!-- Contact Section -->
-    <div class="w3-padding-64 w3-content w3-text-grey w3-center" id="contact" style="background-image: url('https://www.w3schools.com/w3images/contact-bg.jpg'); background-size: cover;">
-        <h2 class="w3-text-light-grey">Contact Me</h2>
-        <hr style="width:200px" class="w3-opacity">
-        
-        <div class="w3-section w3-text-light-grey">
-            <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> A/P-Sameerwadi, Tq-Mudhol, Dist-Bagalkot, Karnataka, INDIA (587316)</p>
-            <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +91 8618593110</p>
-            <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Email: <a href="mailto:prajwal.khatavkar892@gmail.com" class="w3-text-light-grey">prajwal.khatavkar892@gmail.com</a></p>
-            <p><i class="fa fa-linkedin fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> LinkedIn: <a href="https://www.linkedin.com/in/prajwal-khatavkar-54aa92218" class="w3-text-light-grey">Prajwal's LinkedIn</a></p>
-            <p><i class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> GitHub: <a href="https://github.com/PrajwalKhatavkar" class="w3-text-light-grey">Prajwal's GitHub</a></p>
-            <p><i class="fa fa-instagram fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Instagram: <a href="https://www.instagram.com/your_instagram" class="w3-text-light-grey">Prajwal's Instagram</a></p>
-        </div>
-		
-		<div class="w3-card-4 w3-round-large w3-white w3-padding-32 w3-margin-top w3-opacity-min">
+   <!-- Contact Section -->
+<div class="w3-padding-64 w3-content w3-text-grey w3-center" id="contact" style="background-image: url('https://www.w3schools.com/w3images/contact-bg.jpg'); background-size: cover;">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+    
+    <div class="w3-section w3-text-light-grey">
+        <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> A/P-Sameerwadi, Tq-Mudhol, Dist-Bagalkot, Karnataka, INDIA (587316)</p>
+        <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +91 8618593110</p>
+        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Email: <a href="mailto:prajwal.khatavkar892@gmail.com" class="w3-text-light-grey">prajwal.khatavkar892@gmail.com</a></p>
+        <p><i class="fa fa-linkedin fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> LinkedIn: <a href="https://www.linkedin.com/in/prajwal-khatavkar-54aa92218" class="w3-text-light-grey">Prajwal's LinkedIn</a></p>
+        <p><i class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> GitHub: <a href="https://github.com/PrajwalKhatavkar" class="w3-text-light-grey">Prajwal's GitHub</a></p>
+        <p><i class="fa fa-instagram fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Instagram: <a href="https://www.instagram.com/your_instagram" class="w3-text-light-grey">Prajwal's Instagram</a></p>
+    </div>
+    
+    <div class="w3-card-4 w3-round-large w3-white w3-padding-32 w3-margin-top w3-opacity-min">
     <h3>Send me a message:</h3>
-    <form action="/action_page.php" target="_blank">
+    <form onsubmit="sendSMS(event)">
         <p><input class="w3-input w3-border w3-padding-16 w3-margin-bottom" type="text" placeholder="Name" required name="Name"></p>
-        <p><input class="w3-input w3-border w3-padding-16 w3-margin-bottom" type="email" placeholder="Email" required name="Email"></p>
-        <p><input class="w3-input w3-border w3-padding-16 w3-margin-bottom" type="text" placeholder="Subject" required name="Subject"></p>
-        <p><textarea class="w3-input w3-border w3-padding-16 w3-margin-bottom" placeholder="Message" required name="Message" rows="4"></textarea></p>
+        <p><textarea class="w3-input w3-border w3-padding-16 w3-margin-bottom" placeholder="Message" required name="body" rows="4"></textarea></p>
         <p>
             <button class="w3-button w3-black w3-padding-large w3-round-large w3-hover-light-grey" type="submit">
                 <i class="fa fa-paper-plane"></i> SEND MESSAGE
@@ -226,38 +224,29 @@
     </form>
 </div>
 
-<!-- Footer -->
-<footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge w3-center">
-</footer>
-
 <script>
-    function toggleDetails(projectId) {
-        var x = document.getElementById(projectId);
-        if (x.style.display === "none" || x.style.display === "") {
-            x.style.display = "block";
+    function sendSMS(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get the message from the form
+        const message = document.querySelector('textarea[name="body"]').value;
+
+        // Encode the message for use in a URL
+        const encodedMessage = encodeURIComponent(message);
+
+        // Your phone number
+        const phoneNumber = "+918618593110";
+
+        // Create the SMS link
+        const smsLink = `sms:${phoneNumber}?body=${encodedMessage}`;
+
+        // Check if the device supports the SMS protocol
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // Mobile device - open the messaging app
+            window.location.href = smsLink;
         } else {
-            x.style.display = "none";
+            // Desktop or unsupported browser - show a fallback message
+            alert("Your device does not support sending SMS directly. Please use a mobile device or copy the message and send it manually.");
         }
     }
-
-    function highlightProject(projectId) {
-        var project = document.getElementById(projectId);
-        project.classList.add('blink');
-        setTimeout(function() {
-            project.classList.remove('blink');
-        }, 3000);  // Remove the blink class after 3 seconds
-    }
-
-    document.querySelectorAll('.w3-row-padding a').forEach(anchor => {
-        anchor.addEventListener('click', function() {
-            var projectId = this.getAttribute('href').substring(1);
-            setTimeout(function() {
-                highlightProject(projectId);
-            }, 500);  // Highlight the project after redirection
-        });
-    });
 </script>
-</body>
-</html>
-
-
