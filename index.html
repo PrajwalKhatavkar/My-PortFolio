@@ -10,7 +10,7 @@
     <style>
         body, h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif}
         .w3-row-padding img {margin-bottom: 12px}
-        .w3-sidebar {width: 200px;background: #222;}
+        .w3-sidebar {width: 200px; background: #222;}
         #main {margin-left: 200px}
         @media only screen and (max-width: 600px) {#main {margin-left: 0}}
         .w3-sidebar a {padding: 20px}
@@ -169,35 +169,34 @@
         </p>
     </div>
 </div>
-</div>
 
-    <!-- Gallery Section -->
-    <div class="w3-padding-64 w3-content" id="gallery">
-        <h2 class="w3-text-light-grey">Gallery</h2>
-        <hr style="width:200px" class="w3-opacity">
-        
-        <!-- Grid for photos -->
-        <div class="w3-row-padding" style="margin:0 -16px">
-            <div class="w3-half">
-                <a href="#project1" onclick="highlightProject('project1')">
-                    <img src="images/Patient_Health_Monitoring_System.png" alt="Patient Health Monitoring" style="width:100%">
-                </a>
-                <a href="#project2" onclick="highlightProject('project2')">
-                    <img src="images/ClassMate.jpg" alt="ClassMate" style="width:100%">
-                </a>
-            </div>
-            <div class="w3-half">
-                <a href="#project3" onclick="highlightProject('project3')">
-                    <img src="images/server_config.jpg" alt="Automated Server Deployment and Configuration Management System" style="width:100%">
-                </a>
-                <a href="#project4" onclick="highlightProject('project4')">
-                    <img src="images/VBCM.jpeg" alt="Virtual Body Control Module (VBCM)" style="width:100%">
-                </a>
-            </div>
+<!-- Gallery Section -->
+<div class="w3-padding-64 w3-content" id="gallery">
+    <h2 class="w3-text-light-grey">Gallery</h2>
+    <hr style="width:200px" class="w3-opacity">
+    
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half">
+            <a href="#project1" onclick="highlightProject('project1')">
+                <img src="images/Patient_Health_Monitoring_System.png" alt="Patient Health Monitoring" style="width:100%">
+            </a>
+            <a href="#project2" onclick="highlightProject('project2')">
+                <img src="images/ClassMate.jpg" alt="ClassMate" style="width:100%">
+            </a>
+        </div>
+        <div class="w3-half">
+            <a href="#project3" onclick="highlightProject('project3')">
+                <img src="images/server_config.jpg" alt="Automated Server Deployment and Configuration Management System" style="width:100%">
+            </a>
+            <a href="#project4" onclick="highlightProject('project4')">
+                <img src="images/VBCM.jpeg" alt="Virtual Body Control Module (VBCM)" style="width:100%">
+            </a>
         </div>
     </div>
+</div>
 
-   <!-- Contact Section -->
+<!-- Contact Section -->
 <div class="w3-padding-64 w3-content w3-text-grey w3-center" id="contact" style="background-image: url('https://www.w3schools.com/w3images/contact-bg.jpg'); background-size: cover;">
     <h2 class="w3-text-light-grey">Contact Me</h2>
     <hr style="width:200px" class="w3-opacity">
@@ -210,10 +209,10 @@
         <p><i class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> GitHub: <a href="https://github.com/PrajwalKhatavkar" class="w3-text-light-grey">Prajwal's GitHub</a></p>
         <p><i class="fa fa-instagram fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Instagram: <a href="https://www.instagram.com/your_instagram" class="w3-text-light-grey">Prajwal's Instagram</a></p>
     </div>
-    
+
     <div class="w3-card-4 w3-round-large w3-white w3-padding-32 w3-margin-top w3-opacity-min">
     <h3>Send me a message:</h3>
-    <form onsubmit="sendSMS(event)">
+    <form onsubmit="handleSubmit(event)">
         <p><input class="w3-input w3-border w3-padding-16 w3-margin-bottom" type="text" placeholder="Name" required name="Name"></p>
         <p><textarea class="w3-input w3-border w3-padding-16 w3-margin-bottom" placeholder="Message" required name="body" rows="4"></textarea></p>
         <p>
@@ -224,31 +223,52 @@
     </form>
 </div>
 
+<!-- Footer -->
+<footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge w3-center">
+</footer>
+
 <script>
-    function sendSMS(event) {
+    function handleSubmit(event) {
         event.preventDefault(); // Prevent form submission
 
-        // Get the message from the form
+        const name = document.querySelector('input[name="Name"]').value;
         const message = document.querySelector('textarea[name="body"]').value;
+        const encodedMessage = encodeURIComponent(`Name: ${name}\nMessage: ${message}`);
 
-        // Encode the message for use in a URL
-        const encodedMessage = encodeURIComponent(message);
-
-        // Your phone number
+        const email = "prajwal.khatavkar892@gmail.com";
+        const subject = "Message from Portfolio";
+        const emailBody = encodedMessage.replace(/\n/g, '%0D%0A');
+        const emailLink = `mailto:${email}?subject=${subject}&body=${emailBody}`;
+        
         const phoneNumber = "+918618593110";
-
-        // Create the SMS link
         const smsLink = `sms:${phoneNumber}?body=${encodedMessage}`;
 
-        // Check if the device supports the SMS protocol
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            // Mobile device - open the messaging app
+            // Mobile device - open the SMS app
             window.location.href = smsLink;
         } else {
-            // Desktop or unsupported browser - show a fallback message
-            alert("Your device does not support sending SMS directly. Please use a mobile device or copy the message and send it manually.");
+            // Desktop - open the email client
+            window.location.href = emailLink;
         }
     }
+
+    function toggleDetails(projectId) {
+        const details = document.getElementById(projectId);
+        if (details.style.display === "none" || details.style.display === "") {
+            details.style.display = "block";
+        } else {
+            details.style.display = "none";
+        }
+    }
+
+    function highlightProject(projectId) {
+        const project = document.getElementById(projectId);
+        project.classList.add('blink');
+        setTimeout(function() {
+            project.classList.remove('blink');
+        }, 3000); // Remove the blink class after 3 seconds
+    }
 </script>
+
 </body>
 </html>
