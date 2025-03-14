@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Er.Prajwal Khatavkar's Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif}
+        .w3-row-padding img {margin-bottom: 12px}
+        .w3-sidebar {width: 200px; background: #222;}
+        #main {margin-left: 200px}
+        @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+        .w3-sidebar a {padding: 20px}
+        .project-details {display: none;}
+        body {
+            background-image: url('images/circuit-board.png'); /* Ensure the path is correct */
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: transparent; /* Ensures no background color overrides the image */
+            color: white; /* Ensures text is readable */
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .blink {
+            animation: blink 1s linear 3;
+        }
+		.signature-style {
+            font-family: 'Pacifico', cursive; /* Add a signature style font */
+            color: #f8f8ff; /* Pale white color */
+            font-size: 2em;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+    <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-black">
+        <i class="fa fa-home w3-xxlarge"></i>
+        <p>HOME</p>
+    </a>
+    <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-user w3-xxlarge"></i>
+        <p>ABOUT</p>
+    </a>
+    <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-eye w3-xxlarge"></i>
+        <p>PROJECTS</p>
+    </a>
+    <a href="#gallery" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-camera w3-xxlarge"></i>
+        <p>GALLERY</p>
+    </a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-envelope w3-xxlarge"></i>
+        <p>CONTACT</p>
+    </a>
+</nav>
+
+<!-- Navbar on small screens -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+        <a href="#home" class="w3-bar-item w3-button" style="width:20% !important">HOME</a>
+        <a href="#about" class="w3-bar-item w3-button" style="width:20% !important">ABOUT</a>
+        <a href="#projects" class="w3-bar-item w3-button" style="width:20% !important">PROJECTS</a>
+        <a href="#gallery" class="w3-bar-item w3-button" style="width:20% !important">GALLERY</a>
+        <a href="#contact" class="w3-bar-item w3-button" style="width:20% !important">CONTACT</a>
+    </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+    <!-- Home Section -->
+    <header class="w3-container w3-padding-32 w3-center" id="home">
+        <h1 class="w3-jumbo">Er.Prajwal Khatavkar</h1>
+        <p class="w3-large">Welcome to My Portfolio</p>
+        <p>Hi there! I'm Prajwal Khatavkar, an Embedded Software Engineer.</p>
+    </header>
+
+    <!-- About Section -->
+    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+        <h2 class="w3-text-light-grey">About Me</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <p>I am passionate about working in challenging and dynamic environments, with an opportunity to work with diverse groups of people and enhance my professional skills through learning and experience for career growth. I specialize in embedded systems and PCB designing, striving to create innovative and efficient solutions. My keen interest lies in leveraging cutting-edge technology to solve real-world problems.</p>
+        <p>
+            I am a dedicated and enthusiastic Embedded Software Engineer with a strong background in electronics and communication engineering. My journey began with a Bachelor's degree from Biluru Gurubasava Mahaswamiji Institute Of Technology Mudhol, where I honed my technical skills and developed a passion for embedded systems and PCB designing. My educational experiences have provided me with a solid foundation in programming languages like Embedded C, C, and C++, and familiarity with processors such as ARM, Microchip, SIMCom, and Arduino.
+        </p>
+        <p>
+            Throughout my career, I have been driven by a desire to create innovative and efficient solutions to real-world problems. My expertise in embedded systems has allowed me to work on various projects, including IoT-based health monitoring systems, student records management systems, and automated server deployment solutions. I am proficient in leveraging cutting-edge technology to enhance vehicle diagnostics and control through my work on virtual body control modules using Controller Area Network (CAN) technology. These projects have not only sharpened my technical skills but also fostered my ability to collaborate with diverse teams.
+        </p>
+        <p>
+            As a professional, I am committed to continuous learning and growth. I have pursued professional training in embedded systems from Vector India Pvt. Ltd. and have actively participated in industrial training at Nirani Sugars Pvt. Ltd. My internships and hands-on experiences have solidified my understanding of PCB designing and embedded systems. Beyond my technical abilities, I value effective communication and user-friendly design, which is reflected in my efforts to create interactive and user-centric portfolio websites. I am excited to bring my skills and passion to new challenges and opportunities in the field of embedded software engineering.
+        </p>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="w3-padding-64 w3-content w3-text-grey" id="projects">
+        <h2 class="w3-text-light-grey">Major Projects</h2>
+        <hr style="width:200px" class="w3-opacity">
+
+        <!-- Patient Health Monitoring System using IoT -->
+        <div class="w3-padding-16" id="project1">
+            <h3 class="w3-text-light-grey">Patient Health Monitoring System using IoT</h3>
+            <button class="w3-button w3-light-grey w3-padding-large w3-section" onclick="toggleDetails('project1-details')">
+                <i class="fa fa-chevron-down"></i> View Details
+            </button>
+            <div id="project1-details" class="project-details" style="display: none;">
+                <p>
+                    The Patient Health Monitoring System using IoT was designed to provide real-time health data monitoring for patients. This project aimed to improve patient care by allowing healthcare providers to remotely monitor vital signs such as heart rate, temperature, and oxygen levels. The system sends alerts and notifications to healthcare providers in case of abnormal health conditions, ensuring timely intervention.
+                </p>
+                <p>
+                    This project leveraged various technologies including IoT, sensors, microcontrollers, and cloud computing. The sensors were used to collect data from patients, which was then processed by microcontrollers. The data was transmitted to a cloud server via IoT protocols, where it could be accessed by healthcare providers. The use of cloud computing enabled secure storage and real-time access to patient data.
+                </p>
+                <p>
+                    Achieving this project involved extensive research and development. I started by selecting the appropriate sensors and microcontrollers for accurate data collection. I then developed the firmware to interface with the sensors and transmit data to the cloud. The cloud infrastructure was set up to store and provide real-time access to the data. Finally, I implemented a user interface for healthcare providers to monitor patient data and receive alerts. This project not only enhanced my technical skills but also provided valuable insights into remote healthcare solutions.
+                </p>
+            </div>
+        </div>
+
+        <!-- ClassMate -->
+        <div class="w3-padding-16" id="project2">
+            <h3 class="w3-text-light-grey">ClassMate</h3>
+            <button class="w3-button w3-light-grey w3-padding-large w3-section" onclick="toggleDetails('project2-details')">
+                <i class="fa fa-chevron-down"></i> View Details
+			</button>
+            <div id="project2-details" class="project-details" style="display: none;">
+                <p>
+                    ClassMate is a student records management system designed to efficiently manage and retrieve student information. This project was aimed at streamlining the administrative tasks of educational institutions by providing a centralized system for managing student records, including personal details, grades, and attendance. ClassMate ensures secure data storage and easy access for administrators and teachers.
+                </p>
+                <p>
+                    The development of ClassMate involved the use of C programming and database management systems. I utilized C programming to build the core functionality of the system, including data input, processing, and retrieval. A robust database management system was implemented to store and manage the student records securely. The user interface was designed to be intuitive and user-friendly, ensuring ease of use for administrators and teachers.
+                </p>
+                <p>
+                    The achievement of this project required careful planning and execution. I began by gathering requirements from potential users and designing the system architecture. I then developed the application using C programming, ensuring that it met all functional requirements. The database schema was designed to store and retrieve student records efficiently. Throughout the project, I conducted thorough testing to ensure the system's reliability and performance. ClassMate has significantly improved the administrative processes of educational institutions, making student record management more efficient and accurate.
+                </p>
+            </div>
+        </div>
+
+        <!-- Automated Server Deployment and Configuration Management System -->
+        <div class="w3-padding-16" id="project3">
+            <h3 class="w3-text-light-grey">Automated Server Deployment and Configuration Management System</h3>
+            <button class="w3-button w3-light-grey w3-padding-large w3-section" onclick="toggleDetails('project3-details')">
+                <i class="fa fa-chevron-down"></i> View Details
+            </button>
+            <div id="project3-details" class="project-details" style="display: none;">
+                <p>
+                    The Automated Server Deployment and Configuration Management System was developed to streamline the setup and management of servers. This project aimed to reduce manual intervention and errors in server deployment and configuration, ensuring consistent and reliable server environments. The system automates the entire process, from server setup to configuration management, making it ideal for large-scale server deployments.
+                </p>
+                <p>
+                    The project utilized C programming, Linux, and shell scripting to achieve its objectives. C programming was used to develop the core functionality of the system, including server setup and configuration. Linux was chosen as the operating system due to its robustness and flexibility. Shell scripting was employed to automate various tasks, such as installing software packages and configuring system settings.
+                </p>
+                <p>
+                    Achieving this project required a deep understanding of server management and automation. I began by analyzing the server setup and configuration process, identifying areas that could be automated. I then developed a comprehensive solution using C programming and shell scripting, ensuring that the system was both efficient and reliable. The project involved extensive testing to validate the automated processes and ensure their accuracy. The Automated Server Deployment and Configuration Management System has greatly simplified server management, making it faster and more efficient.
+                </p>
+            </div>
+        </div>
+
+        <!-- Virtual Body Control Module (VBCM) -->
+        <div class="w3-padding-16" id="project4">
+            <h3 class="w3-text-light-grey">Virtual Body Control Module (VBCM)</h3>
+            <button class="w3-button w3-light-grey w3-padding-large w3-section" onclick="toggleDetails('project4-details')">
+                <i class="fa fa-chevron-down"></i> View Details
+            </button>
+            <div id="project4-details" class="project-details" style="display: none;">
+                <p>
+                    The Virtual Body Control Module (VBCM) is a sophisticated project aimed at enhancing vehicle diagnostics and control using Controller Area Network (CAN) technology. This project was developed to improve the reliability and safety of vehicles by providing real-time monitoring and control of various vehicle functions. The VBCM allows for efficient communication between different vehicle components, enabling better diagnostics and control.
+                </p>
+                <p>
+                    The development of the VBCM involved the use of CAN technology, microcontrollers, and embedded systems. CAN technology was used to establish communication between different vehicle components, while microcontrollers were employed to process and transmit data. Embedded systems were utilized to develop the firmware that controlled the VBCM's functionality. The project also included the development of a user interface for monitoring and controlling vehicle functions.
+                </p>
+                <p>
+                    Achieving this project required extensive knowledge of vehicle systems and CAN technology. I began by researching the communication protocols and requirements for vehicle diagnostics and control. I then designed the system architecture, selecting the appropriate microcontrollers and CAN modules. The firmware was developed to enable real-time communication and control of vehicle functions. Throughout the project, I conducted rigorous testing to ensure the system's reliability and performance. The VBCM has significantly improved vehicle diagnostics and control, contributing to safer and more efficient vehicles.
+                </p>
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="w3-padding-64 w3-content" id="gallery">
+            <h2 class="w3-text-light-grey">Gallery</h2>
+            <hr style="width:200px" class="w3-opacity">
+            
+            <!-- Grid for photos -->
+            <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-half">
+                    <a href="#project1" onclick="highlightProject('project1')">
+                        <img src="images/Patient_Health_Monitoring_System.png" alt="Patient Health Monitoring" style="width:100%">
+                    </a>
+                    <a href="#project2" onclick="highlightProject('project2')">
+                        <img src="images/ClassMate.jpg" alt="ClassMate" style="width:100%">
+                    </a>
+                </div>
+                <div class="w3-half">
+                    <a href="#project3" onclick="highlightProject('project3')">
+                        <img src="images/server_config.jpg" alt="Automated Server Deployment and Configuration Management System" style="width:100%">
+                    </a>
+                    <a href="#project4" onclick="highlightProject('project4')">
+                        <img src="images/VBCM.jpeg" alt="Virtual Body Control Module (VBCM)" style="width:100%">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="w3-padding-64 w3-content w3-text-grey w3-center" id="contact" style="background-image: url('https://www.w3schools.com/w3images/contact-bg.jpg'); background-size: cover;">
+            <h2 class="w3-text-light-grey">Contact Me</h2>
+            <hr style="width:200px" class="w3-opacity">
+            
+            <div class="w3-section w3-text-light-grey">
+                <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> A/P-Sameerwadi, Tq-Mudhol, Dist-Bagalkot, Karnataka, INDIA (587316)</p>
+                <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +91 8618593110</p>
+                <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Email: <a href="mailto:prajwal.khatavkar892@gmail.com" class="w3-text-light-grey">prajwal.khatavkar892@gmail.com</a></p>
+                <p><i class="fa fa-linkedin fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> LinkedIn: <a href="https://www.linkedin.com/in/prajwal-khatavkar-54aa92218" class="w3-text-light-grey">Prajwal's LinkedIn</a></p>
+                <p><i class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> GitHub: <a href="https://github.com/PrajwalKhatavkar" class="w3-text-light-grey">Prajwal's GitHub</a></p>
+                <p><i class="fa fa-instagram fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Instagram: <a href="https://www.instagram.com/your_instagram" class="w3-text-light-grey">Prajwal's Instagram</a></p>
+            </div>
+
+            <div class="w3-card-4 w3-round-large w3-white w3-padding-32 w3-margin-top w3-opacity-min">
+                <h3>Send me a message:</h3>
+                <form onsubmit="handleSubmit(event)">
+                    <p><input class="w3-input w3-border w3-padding-16 w3-margin-bottom" type="text" placeholder="Name" required name="Name"></p>
+                    <p><textarea class="w3-input w3-border w3-padding-16 w3-margin-bottom" placeholder="Message" required name="body" rows="4"></textarea></p>
+                    <p>
+						<button class="w3-button w3-black w3-padding-large w3-round-large w3-hover-light-grey" type="submit">
+                            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                        </button>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge w3-center">
+			<h1 class="signature-style">Thank You For Visiting My Portfolio</h1>
+		</footer>
+
+        <script>
+            function handleSubmit(event) {
+                event.preventDefault(); // Prevent form submission
+
+                const name = document.querySelector('input[name="Name"]').value;
+                const message = document.querySelector('textarea[name="body"]').value;
+                const encodedMessage = encodeURIComponent(`Name: ${name}\nMessage: ${message}`);
+
+                const email = "prajwal.khatavkar892@gmail.com";
+                const subject = "Message from Portfolio";
+                const emailBody = encodedMessage.replace(/\n/g, '%0D%0A');
+                const emailLink = `mailto:${email}?subject=${subject}&body=${emailBody}`;
+                
+                const phoneNumber = "+918618593110";
+                const smsLink = `sms:${phoneNumber}?body=${encodedMessage}`;
+
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    // Mobile device - open the SMS app
+                    window.location.href = smsLink;
+                } else {
+                    // Desktop - open the email client
+                    window.location.href = emailLink;
+                }
+            }
+
+            function toggleDetails(projectId) {
+                const details = document.getElementById(projectId);
+                if (details.style.display === "none" || details.style.display === "") {
+                    details.style.display = "block";
+                } else {
+                    details.style.display = "none";
+                }
+            }
+
+            function highlightProject(projectId) {
+                const project = document.getElementById(projectId);
+                project.classList.add('blink');
+                setTimeout(function() {
+                    project.classList.remove('blink');
+                }, 3000); // Remove the blink class after 3 seconds
+            }
+        </script>
+
+    </div>
+</body>
+</html>
+
